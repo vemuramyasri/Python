@@ -1,0 +1,19 @@
+import math
+
+def solve():
+    n, x = map(int, input().split())
+    
+    # Calculate the number of subscriptions needed
+    subscriptions = math.ceil(n / 6)
+    
+    # Calculate the total cost
+    total_cost = subscriptions * x
+    
+    print(total_cost)
+
+# Read the number of test cases
+t = int(input())
+
+# Iterate through the test cases
+for _ in range(t):
+    solve()
