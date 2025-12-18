@@ -1,0 +1,7 @@
+if __name__ == '__main__':
+    n = int(input())
+    
+    # range(n) creates a sequence from 0 up to (but not including) n
+    for i in range(n):
+        # Calculate the square using the exponent operator **
+        print(i**2)
