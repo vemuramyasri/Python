@@ -1,0 +1,9 @@
+if __name__ == '__main__':
+    n = int(input())
+    # Read the line of space-separated integers
+    # Split them into a list and convert each string to an integer
+    # Finally, wrap the map object in a tuple() constructor
+    t = tuple(map(int, input().split()))
+    
+    # Print the hash value of the tuple
+    print(hash(t))
