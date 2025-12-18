@@ -1,0 +1,13 @@
+def split_and_join(line):
+    # Step 1: Split the string into a list using the space " " as a delimiter
+    split_list = line.split(" ")
+    
+    # Step 2: Join the list elements into a single string using a hyphen "-"
+    result = "-".join(split_list)
+    
+    return result
+
+if __name__ == '__main__':
+    line = input()
+    result = split_and_join(line)
+    print(result)
