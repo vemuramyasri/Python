@@ -1,0 +1,40 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+
+
+
+first_multiple_input = input().rstrip().split()
+
+n = int(first_multiple_input[0])
+
+m = int(first_multiple_input[1])
+
+matrix = []
+
+for _ in range(n):
+    matrix_item = input()
+    matrix.append(matrix_item)
+decoded_string = ""
+for j in range(m):
+    for i in range(n):
+        # We use a try-except or check length because some rows 
+        # might be shorter than m, though constraints usually guarantee n x m
+        decoded_string += matrix[i][j]
+
+# 2. Use Regex to replace symbols/spaces between alphanumeric characters
+# Logic: 
+# (?<=\w) -> Lookbehind: ensures there is an alphanumeric character before
+# [^\w]+  -> Match one or more non-alphanumeric characters
+# (?=\w)  -> Lookahead: ensures there is an alphanumeric character after
+pattern = r'(?<=\w)([^\w]+)(?=\w)'
+
+# Replace the matched symbols with a single space
+final_output = re.sub(pattern, ' ', decoded_string)
+
+print(final_output)
