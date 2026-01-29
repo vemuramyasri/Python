@@ -1,0 +1,21 @@
+import re
+
+def transform_logic():
+    # Read the number of lines
+    try:
+        n = int(input())
+    except EOFError:
+        return
+
+    for _ in range(n):
+        line = input()
+               # Pattern for &&
+        line = re.sub(r'(?<= )&&(?= )', 'and', line)
+        
+        # Pattern for ||
+        line = re.sub(r'(?<= )\|\|(?= )', 'or', line)
+        
+        print(line)
+
+if __name__ == '__main__':
+    transform_logic()
